@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec", "~> 2.6"
   s.add_development_dependency "awesome_print"
 
-  s.add_dependency "ruby-graphviz" # Needed for Parser graph visualizations.
+  s.add_dependency "ruby-graphviz" # graph visualizations
 
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"

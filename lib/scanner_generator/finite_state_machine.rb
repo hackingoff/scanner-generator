@@ -1,9 +1,8 @@
 require 'graphviz'
 require 'set'
-require File.dirname(__FILE__) + '/thompson_construction.rb'
-#require 'awesome_print'
 
 module ScannerGenerator
+  require File.dirname(__FILE__) + '/thompson_construction.rb'
 
   LAMBDA = "LAMBDA"; SOURCE = 0; DEST = 1; LABEL = 2;
   ERROR = 0; MACHINE_ACCEPT = 1; HALT_RETURN = 2 # Action Table codes [E, MA, HR]
