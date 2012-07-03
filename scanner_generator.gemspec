@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Hacking Off"]
   s.email       = ["source@hackingoff.com"]
   s.homepage    = "https://github.com/hackingoff/context-free-grammar"
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Parser generation and CFG analysis.}
+  s.description = %q{Part of the compiler construction toolkit's guts.}
 
   s.rubyforge_project = "scanner_generator"
 
