@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = ScannerGenerator::VERSION
   s.authors     = ["Hacking Off"]
   s.email       = ["source@hackingoff.com"]
-  s.homepage    = "https://github.com/hackingoff/context-free-grammar"
+  s.homepage    = "https://github.com/hackingoff/scanner-generator"
   s.summary     = %q{Parser generation and CFG analysis.}
   s.description = %q{Part of the compiler construction toolkit's guts.}
 
