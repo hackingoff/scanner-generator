@@ -38,8 +38,10 @@ module ScannerGenerator
 
   class FiniteStateMachine
     include ThompsonConstruction
+
     attr_reader :graph_hash, :accept_states, :origin
     attr_accessor :labels
+    
     # Must set @accept_states, @edges, @edge_labels, @node_labels, @graph_hash
     # edge/node labels are derived from @graph_hash
     def initialize(input)
@@ -174,7 +176,7 @@ module ScannerGenerator
       return self
     end
     
-    def draw_graph(filename = "output", svgname = :Finite_Automata_Graph, shape = "circle")
+    def draw_graph(filename = "output", svgname = :Finite_Automata_Graph, shape = "circle", path = nil)
       graph = GraphViz::new(:Finite_Automata_Graph)
       graph[:rankdir] = @rankdir
       # !!! going to have to check of @labels[node_num] (label for node # node_num exists and specify it with :label => @label[node_num] when present)
@@ -198,10 +200,14 @@ module ScannerGenerator
         end
       end
 
-      graph.output(:svg => "#{filename}.svg")
+      unless path.nil?
+        graph.output(:svg => "#{filename}.svg", :path => path)
+      else
+        graph.output(:svg => "#{filename}.svg")
+      end
     end
 
-    def draw_state_labeled_graph(filename = "output", svgname = :Finite_Automata_Graph, shape = "circle")
+    def draw_state_labeled_graph(filename = "output", svgname = :Finite_Automata_Graph, shape = "circle", path = nil)
       labels = @labels.dup
       # modify the labels
       @labels.each_with_index do |label, ii|
@@ -212,7 +218,7 @@ module ScannerGenerator
         heading = "State #{ii}"
         @labels[ii] = '<<table color="'+table_border_color+'" style="ROUNDED" border="1" cellborder="0" cellpadding="5"><tr><td align="center" colspan="1"><font color="#666666" point-size="8">'+heading+'</font></td></tr>'+lines+'</table>>'
       end
-      result = draw_graph(filename, svgname, shape)
+      result = draw_graph(filename, svgname, shape, path)
       @labels = labels
       result
     end

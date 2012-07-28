@@ -1,0 +1,3 @@
+0.0.3
+Added path option to draw_state_labeled_graph.
+This matters when using scanner_generator on shared hosting. For example, Dreamhost may fail to find `dot` even when its directory is explicitly added to path in .bashrc.
