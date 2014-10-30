@@ -1,5 +1,6 @@
 module ThompsonConstruction
   PENDING = 0;
+  LAMBDA = "LAMBDA";
 #############################################################################
 # Thompson-McNaughton-Yamada Construction Section
 #############################################################################
